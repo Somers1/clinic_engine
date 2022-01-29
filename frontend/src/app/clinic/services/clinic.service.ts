@@ -37,7 +37,7 @@ export class ClinicService {
   }
 
   getStudentNoteServerSource(studentId:string) {
-    return this.serverSourceConf(`api/clinic/student-notes/?student=${studentId}`)
+    return this.serverSourceConf(`api/clinic/student-note/?student=${studentId}`)
   }
 
   postSchool(school: School) {
