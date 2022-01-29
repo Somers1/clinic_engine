@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ServerDataSource} from "ng2-smart-table";
 import {ClinicService} from "../../services/clinic.service";
 import {Student} from "../../models/student.model";
+import {School} from "../../models/school.model";
 
 @Component({
   selector: 'app-school-dashboard',
@@ -20,9 +21,13 @@ export class SchoolDashboardComponent implements OnInit {
         title: 'Student Name',
         filter: true,
       },
-      school: {
-        title: 'School',
-        filter: false,
+      diagnosis: {
+        title: 'Diagnosis',
+        filter: true,
+      },
+      clinician_name: {
+        title: 'Clinician Name',
+        filter: true,
       }
     },
   }
@@ -36,6 +41,6 @@ export class SchoolDashboardComponent implements OnInit {
   }
 
   onRowSelect(event: any) {
-    console.log(<Student>event.data)
+    const selectedStudent = <Student>event.data
   }
 }

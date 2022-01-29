@@ -35,7 +35,7 @@ class PaginatedSchoolViewSet(ModelViewSet):
 
 class PaginatedStudentViewSet(ModelViewSet):
     queryset = Student.objects.all()
-    serializer_class = StudentSchoolSerializer
+    serializer_class = StudentSerializer
     pagination_class = AngularPaginator
     search_fields = ['name']
     ordering_fields = ['name']
