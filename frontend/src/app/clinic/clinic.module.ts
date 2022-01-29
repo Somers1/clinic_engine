@@ -13,6 +13,7 @@ import { StudentFormComponent } from './forms/student-form/student-form.componen
 import { SchoolDashboardComponent } from './components/school-dashboard/school-dashboard.component';
 import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
 import { StudentInfoCardComponent } from './components/student-info-card/student-info-card.component';
+import { StudentActionCardComponent } from './components/student-action-card/student-action-card.component';
 
 
 
@@ -26,7 +27,8 @@ import { StudentInfoCardComponent } from './components/student-info-card/student
     StudentFormComponent,
     SchoolDashboardComponent,
     StudentDashboardComponent,
-    StudentInfoCardComponent
+    StudentInfoCardComponent,
+    StudentActionCardComponent
   ],
   imports: [
     CommonModule,

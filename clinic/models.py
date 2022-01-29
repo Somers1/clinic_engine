@@ -42,10 +42,16 @@ class Student(models.Model):
     gender = models.CharField(max_length=255, choices=genders, null=True, blank=True)
     diagnosis = models.CharField(max_length=255, null=True, blank=True)
     clinician_name = models.CharField(max_length=255, null=True, blank=True)
-    notes = models.TextField(null=True, blank=True)
 
     class Meta:
         ordering = ('name',)
+
+
+class StudentNotes(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='notes')
+    note = models.TextField(null=True, blank=True)
+    note_date = models.DateTimeField(auto_now=True)
+    note_taker = models.CharField(max_length=255, null=True, blank=True)
 
 
 class Assessment(models.Model):
@@ -53,6 +59,8 @@ class Assessment(models.Model):
     bot_score = models.CharField(max_length=255, null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
     year_grade = models.CharField(max_length=255, null=True, blank=True)
+
+
 
 
 
