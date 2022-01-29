@@ -6,17 +6,6 @@ export const environment = {
   production: false,
   apiUrl: "http://127.0.0.1:8000/",
 };
-export function serverSourceConf(endpoint: string) {
-  return {
-    endPoint: `${environment.apiUrl}/${endpoint}`,
-    dataKey: 'results',
-    totalKey: 'count',
-    pagerPageKey: 'page',
-    pagerLimitKey: 'page_size',
-    sortFieldKey: 'ordering',
-    filterFieldKey: 'search_#field#',
-  };
-}
 
 
 /*

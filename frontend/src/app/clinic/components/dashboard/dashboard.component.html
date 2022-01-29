@@ -1,1 +1,6 @@
-<ng2-smart-table></ng2-smart-table>
+<nb-card>
+  <nb-card-body>
+    <ng2-smart-table [settings]="tableSettings" [source]="source" (userRowSelect)="onRowSelect($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

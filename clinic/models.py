@@ -25,6 +25,9 @@ class School(models.Model):
     address = models.CharField(max_length=255, blank=True, null=True)
     school_type = models.CharField(max_length=255, choices=school_types, blank=True, null=True)
 
+    class Meta:
+        ordering = ('name',)
+
 
 class Student(models.Model):
     MALE = 'male'

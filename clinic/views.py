@@ -11,6 +11,8 @@ class ClinicViewSet(ModelViewSet):
 class SchoolViewSet(ModelViewSet):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
+    search_fields = ['name', 'address', 'contact_name', 'contact_email', 'contact_phone']
+    ordering_fields = ['name', 'address', 'contact_name', 'contact_email', 'contact_phone']
 
 
 class StudentViewSet(ModelViewSet):
