@@ -25,6 +25,3 @@ class StudentViewSet(ModelViewSet):
 class AssessmentViewSet(ModelViewSet):
     queryset = Assessment.objects.all()
     serializer_class = AssessmentSerializer
-
-
-

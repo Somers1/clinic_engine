@@ -2,3 +2,4 @@
 venv
 *.conf
 .angular
+node_modules

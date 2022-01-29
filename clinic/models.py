@@ -40,7 +40,7 @@ class Student(models.Model):
     grade = models.CharField(max_length=255, null=True, blank=True)
     name = models.CharField(max_length=255)
     date_of_birth = models.DateField(null=True, blank=True)
-    school_type = models.CharField(max_length=255, choices=genders)
+    gender = models.CharField(max_length=255, choices=genders)
     diagnosis = models.CharField(max_length=255, null=True, blank=True)
     clinician_name = models.CharField(max_length=255, null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
