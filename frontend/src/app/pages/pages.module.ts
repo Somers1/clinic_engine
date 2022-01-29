@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {PagesRoutingModule} from './pages-routing.module';
 import {PagesComponent} from "./pages.component";
-import {NbActionsModule, NbIconModule, NbLayoutModule, NbTooltipModule} from "@nebular/theme";
+import {NbActionsModule, NbButtonModule, NbIconModule, NbLayoutModule, NbTooltipModule} from "@nebular/theme";
 import {NbEvaIconsModule} from "@nebular/eva-icons";
 import {MatMenuModule} from "@angular/material/menu";
 
@@ -20,7 +20,8 @@ import {MatMenuModule} from "@angular/material/menu";
     NbEvaIconsModule,
     NbIconModule,
     NbTooltipModule,
-    MatMenuModule
+    MatMenuModule,
+    NbButtonModule
   ]
 })
 export class PagesModule {

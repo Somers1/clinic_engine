@@ -1,1 +1,29 @@
-<p>school-form works!</p>
+<div class="center-flex-col">
+  <div class="flex-col half-width">
+    <span>School Name:</span>
+    <input nbInput fullWidth [(ngModel)]="school.name">
+  </div>
+  <div class="flex-col half-width">
+    <span>Address:</span>
+    <input nbInput fullWidth [(ngModel)]="school.address">
+  </div>
+  <div class="flex-col half-width">
+    <span>School Type:</span>
+    <nb-select fullWidth [(ngModel)]="school.school_type">
+      <nb-option *ngFor="let type of schoolTypes | keyvalue" [value]="type.value">{{type.value | titlecase}}</nb-option>
+    </nb-select>
+  </div>
+  <div class="flex-col half-width">
+    <span>Contact Name:</span>
+    <input nbInput fullWidth [(ngModel)]="school.contact_name">
+  </div>
+  <div class="flex-col half-width">
+    <span>Contact Email:</span>
+    <input nbInput fullWidth [(ngModel)]="school.contact_email">
+  </div>
+  <div class="flex-col half-width">
+    <span>Contact Phone:</span>
+    <input nbInput fullWidth [(ngModel)]="school.contact_phone">
+  </div>
+</div>
+

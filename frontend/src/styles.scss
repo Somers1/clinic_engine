@@ -1,74 +1,13 @@
-@import 'themes';
+//@use '@angular/material' as mat;
 
-@import '~@nebular/theme/styles/globals';
+@use 'themes' as *;
+
+@use '@nebular/theme/styles/globals' as *;
+
+//@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 @include nb-install() {
   @include nb-theme-global();
-}
-
-;
-/* You can add global styles to this file, and also import other style files */
-
-:root {
-  --color-primary-100: #f2f6ff;
-  --color-primary-200: #d9e4ff;
-  --color-primary-300: #a6c1ff;
-  --color-primary-400: #598bff;
-  --color-primary-500: #3366ff;
-  --color-primary-600: #274bdb;
-  --color-primary-700: #1a34b8;
-  --color-primary-800: #102694;
-  --color-primary-900: #091c7a;
-  --button-medium-text-font-size: 0.875rem;
-  --button-rectangle-border-radius: 0.25rem;
-  --button-filled-text-transform: uppercase;
-  --button-filled-border-width: 0.0625rem;
-  --button-filled-border-style: solid;
-  --button-filled-medium-padding: 0.6875rem 1.125rem;
-  --color-basic-100: #ffffff;
-  --color-basic-200: #f7f9fc;
-  --color-basic-300: #edf1f7;
-  --color-basic-400: #e4e9f2;
-  --color-basic-500: #c5cee0;
-  --color-basic-600: #8f9bb3;
-  --color-basic-700: #2e3a59;
-  --color-basic-800: #222b45;
-  --color-basic-900: #192038;
-  --color-basic-1000: #151a30;
-  --font-family-primary: Open Sans, sans-serif;
-  --button-text-font-weight: 700;
-  --button-cursor: pointer;
-  --color-basic-hover: var(--color-basic-200);
-}
-
-.generic-button {
-  background-color: var(--color-basic-300);
-  border-color: var(--color-basic-300);
-  color: var(--color-basic-800);
-  padding: var(--button-filled-medium-padding);
-  border-style: var(--button-filled-border-style);
-  border-width: var(--button-filled-border-width);
-  text-transform: var(--button-filled-text-transform);
-  border-radius: var(--button-rectangle-border-radius);
-  font-size: var(--button-medium-text-font-size);
-  line-height: 1rem;
-  appearance: none;
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: var(--button-cursor);
-  font-family: var(--font-family-primary);
-  font-weight: var(--button-text-font-weight);
-}
-
-.generic-button:hover {
-  background-color: var(--color-basic-hover);
-  border-color: var(--color-basic-hover);
 }
 
 .nb-menu {
@@ -92,4 +31,39 @@
   text-transform: var(--button-filled-text-transform);
   color: var(--color-basic-800);
   font-weight: var(--button-text-font-weight);
+}
+.center-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.half-width {
+  width:50%;
+}
+.center-flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.submit-button{
+  margin-top: 10px;
+}
+.span-tag {
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 5px;
+}
+.span-text {
+  font-weight: normal;
+  font-size: 16px;
+}
+input {
+  margin-bottom: 5px;
 }

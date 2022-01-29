@@ -19,7 +19,6 @@ export class PagesComponent implements OnInit {
 
   onLogout() {
     this.authService.logout()
-    this.loggedIn = false
   }
 
   onLogin() {

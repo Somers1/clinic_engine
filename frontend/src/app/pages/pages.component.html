@@ -7,8 +7,7 @@
     </h4>
     <div class="header-right-container">
       <nb-actions size="small">
-        <nb-action [matMenuTriggerFor]="menu" nbTooltip="Create" icon="plus-outline"
-                   (click)="navTo('create')"></nb-action>
+        <nb-action [matMenuTriggerFor]="menu" nbTooltip="Create" icon="plus-outline"></nb-action>
         <mat-menu class="nb-menu" #menu="matMenu">
           <button class="nb-menu-button" mat-menu-item (click)="navTo('add-school')">
             <span class="nb-menu-item">School</span>
@@ -22,8 +21,8 @@
         </mat-menu>
         <nb-action nbTooltip="Home" icon="home-outline" (click)="navTo('dashboard')"></nb-action>
         <nb-action>
-          <button *ngIf="loggedIn" class="generic-button" (click)="onLogout()">Logout</button>
-          <button *ngIf="!loggedIn" class="generic-button" (click)="onLogin()">Login</button>
+          <button *ngIf="loggedIn" nbButton (click)="onLogout()">Logout</button>
+          <button *ngIf="!loggedIn" nbButton (click)="onLogin()">Login</button>
         </nb-action>
       </nb-actions>
     </div>

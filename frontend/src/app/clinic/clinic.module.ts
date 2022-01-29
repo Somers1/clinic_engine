@@ -5,6 +5,8 @@ import { AddSchoolComponent } from './components/add-school/add-school.component
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { AddAssessmentComponent } from './components/add-assessment/add-assessment.component';
 import { SchoolFormComponent } from './forms/school-form/school-form.component';
+import {FormsModule} from "@angular/forms";
+import {NbButtonModule, NbCardModule, NbInputModule, NbSelectModule} from "@nebular/theme";
 
 
 
@@ -17,7 +19,12 @@ import { SchoolFormComponent } from './forms/school-form/school-form.component';
     SchoolFormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    NbCardModule,
+    NbButtonModule,
+    NbInputModule,
+    NbSelectModule
   ]
 })
 export class ClinicModule { }

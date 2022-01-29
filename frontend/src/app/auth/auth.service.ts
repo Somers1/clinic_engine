@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
@@ -9,19 +9,22 @@ import {User, UserRegister} from "./models/user.model";
 })
 export class AuthService {
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+  }
 
-  login(formData: any){
+  login(formData: any) {
     return this.http.post<any>(`${environment.apiUrl}api/core/login/`, formData)
   }
-  logout(){
-    localStorage.clear();
-    this.router.navigate(['auth/login']).catch();
+
+  logout() {
+    this.router.navigate(['auth/login']).then(() => localStorage.clear());
   }
+
   isAuthenticated() {
     return !!localStorage.getItem('token');
   }
-  register(userData:User){
+
+  register(userData: User) {
     return this.http.post<User>(`${environment.apiUrl}api/core/user-task/`, userData)
   }
 }

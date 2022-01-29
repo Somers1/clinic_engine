@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbInputModule} from '@nebular/theme';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbCardModule,
+  NbInputModule,
+  NbButtonModule, NbSidebarModule, NbDialogModule, NbStepperModule, NbIconModule
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import {AuthGuard} from "./auth/auth-guard.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {AuthInterceptor} from "./auth/auth-interceptor";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {APP_BASE_HREF} from "@angular/common";
+import {AuthInterceptor} from "./auth/auth-interceptor";
+import {AuthGuard} from "./auth/auth-guard.service";
 import {ClinicModule} from "./clinic/clinic.module";
 
 @NgModule({
@@ -18,14 +24,22 @@ import {ClinicModule} from "./clinic/clinic.module";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    NoopAnimationsModule,
-    NbInputModule,
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbThemeModule.forRoot({name: 'default'}),
     NbLayoutModule,
     NbEvaIconsModule,
-    ClinicModule
+    NbIconModule,
+    NbInputModule,
+    NbCardModule,
+    NbButtonModule,
+    ClinicModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NbSidebarModule.forRoot(),
+    NbDialogModule.forRoot(),
+    NbStepperModule,
   ],
   providers: [
     AuthGuard,
