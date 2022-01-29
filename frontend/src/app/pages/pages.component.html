@@ -7,10 +7,20 @@
     </h4>
     <div class="header-right-container">
       <nb-actions size="small">
-        <nb-action nbTooltip="Create Job" icon="plus-outline" (click)="navTo('create')"></nb-action>
+        <nb-action [matMenuTriggerFor]="menu" nbTooltip="Create" icon="plus-outline"
+                   (click)="navTo('create')"></nb-action>
+        <mat-menu class="nb-menu" #menu="matMenu">
+          <button class="nb-menu-button" mat-menu-item (click)="navTo('add-school')">
+            <span class="nb-menu-item">School</span>
+          </button>
+          <button class="nb-menu-button" mat-menu-item (click)="navTo('add-student')">
+            <span class="nb-menu-item">Student</span>
+          </button>
+          <button class="nb-menu-button" mat-menu-item (click)="navTo('add-assessment')">
+            <span class="nb-menu-item">Assessment</span>
+          </button>
+        </mat-menu>
         <nb-action nbTooltip="Home" icon="home-outline" (click)="navTo('dashboard')"></nb-action>
-        <nb-action nbTooltip="My Account" icon="person-outline"  (click)="navTo('profile')"></nb-action>
-        <nb-action nbTooltip="My Saved Jobs" icon="star-outline"  (click)="navTo('saved')"></nb-action>
         <nb-action>
           <button *ngIf="loggedIn" class="generic-button" (click)="onLogout()">Logout</button>
           <button *ngIf="!loggedIn" class="generic-button" (click)="onLogin()">Login</button>

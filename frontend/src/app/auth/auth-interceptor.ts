@@ -9,7 +9,6 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.token = <string>localStorage.getItem('token');
     if (!this.token) {
-      console.log(req)
       return next.handle(req);
     }
     if (req.params.has('ordering')) {
@@ -41,7 +40,7 @@ export class AuthInterceptor implements HttpInterceptor {
         'Authorization': `Token ${this.token}`,
       },
     });
-    console.log(req)
+    // console.log(req)
     return next.handle(req);
   }
 }

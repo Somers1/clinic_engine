@@ -70,3 +70,26 @@
   background-color: var(--color-basic-hover);
   border-color: var(--color-basic-hover);
 }
+
+.nb-menu {
+  background: white;
+  border-radius: var(--button-rectangle-border-radius);
+}
+
+.nb-menu-button {
+  background: white;
+  border-radius: var(--button-rectangle-border-radius);
+}
+
+.nb-menu-button:hover {
+  background-color: var(--color-basic-hover);
+  border-color: var(--color-basic-hover);
+}
+
+.nb-menu-item {
+  font-family: var(--font-family-primary);
+  font-size: var(--button-medium-text-font-size);
+  text-transform: var(--button-filled-text-transform);
+  color: var(--color-basic-800);
+  font-weight: var(--button-text-font-weight);
+}

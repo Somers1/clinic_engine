@@ -5,6 +5,7 @@ import {PagesRoutingModule} from './pages-routing.module';
 import {PagesComponent} from "./pages.component";
 import {NbActionsModule, NbIconModule, NbLayoutModule, NbTooltipModule} from "@nebular/theme";
 import {NbEvaIconsModule} from "@nebular/eva-icons";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {NbEvaIconsModule} from "@nebular/eva-icons";
     NbActionsModule,
     NbEvaIconsModule,
     NbIconModule,
-    NbTooltipModule
+    NbTooltipModule,
+    MatMenuModule
   ]
 })
 export class PagesModule {

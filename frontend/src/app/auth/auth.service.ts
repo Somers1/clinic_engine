@@ -16,7 +16,7 @@ export class AuthService {
   }
   logout(){
     localStorage.clear();
-    this.router.navigate(['pages/dashboard']).catch();
+    this.router.navigate(['auth/login']).catch();
   }
   isAuthenticated() {
     return !!localStorage.getItem('token');
