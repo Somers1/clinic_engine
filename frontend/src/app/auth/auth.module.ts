@@ -7,7 +7,6 @@ import { NgxAuthRoutingModule } from './auth-routing.module';
 import { NbAuthModule } from '@nebular/auth';
 import { LoginComponent } from './login/login.component';
 import {NbAlertModule, NbButtonModule, NbCardModule, NbInputModule} from "@nebular/theme";
-import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -24,7 +23,6 @@ import { RegisterComponent } from './register/register.component';
   ],
   declarations: [
     LoginComponent,
-    RegisterComponent,
   ],
 })
 export class AuthModule {
