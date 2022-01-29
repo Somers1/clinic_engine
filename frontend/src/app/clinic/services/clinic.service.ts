@@ -13,9 +13,9 @@ export class ClinicService {
   constructor(private http: HttpClient) {
   }
 
-  getSchoolServerSource() {
+  serverSourceConf(endpoint: string) {
     return new ServerDataSource(this.http, {
-      endPoint: `${environment.apiUrl}api/clinic/paginated-school/`,
+      endPoint: `${environment.apiUrl}${endpoint}`,
       dataKey: 'results',
       totalKey: 'count',
       pagerPageKey: 'page',
@@ -23,6 +23,14 @@ export class ClinicService {
       sortFieldKey: 'ordering',
       filterFieldKey: 'search_#field#',
     })
+  }
+
+  getSchoolServerSource() {
+    return this.serverSourceConf('api/clinic/paginated-school/')
+  }
+
+  getStudentServerSource() {
+    return this.serverSourceConf('api/clinic/paginated-student/')
   }
 
   postSchool(school: School) {
@@ -33,7 +41,7 @@ export class ClinicService {
     return this.http.post<Student>(`${environment.apiUrl}api/clinic/student/`, student)
   }
 
-  getSchools(){
+  getSchools() {
     return this.http.get<School[]>(`${environment.apiUrl}api/clinic/school/`)
   }
 }

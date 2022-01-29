@@ -10,6 +10,7 @@ import {NbButtonModule, NbCardModule, NbInputModule, NbSelectModule} from "@nebu
 import {DialogModule} from "../dialog/dialog.module";
 import {Ng2SmartTableModule} from "ng2-smart-table";
 import { StudentFormComponent } from './forms/student-form/student-form.component';
+import { SchoolDashboardComponent } from './components/school-dashboard/school-dashboard.component';
 
 
 
@@ -20,7 +21,8 @@ import { StudentFormComponent } from './forms/student-form/student-form.componen
     AddStudentComponent,
     AddAssessmentComponent,
     SchoolFormComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    SchoolDashboardComponent
   ],
   imports: [
     CommonModule,

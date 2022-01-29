@@ -44,6 +44,9 @@ class Student(models.Model):
     clinician_name = models.CharField(max_length=255, null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
 
+    class Meta:
+        ordering = ('name',)
+
 
 class Assessment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='assessments')

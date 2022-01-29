@@ -7,6 +7,7 @@ router = routers.DefaultRouter(trailing_slash=True)
 router.register(r'clinic', ClinicViewSet, basename='clinic')
 router.register(r'school', SchoolViewSet, basename='school')
 router.register(r'paginated-school', PaginatedSchoolViewSet, basename='paginated-school')
+router.register(r'paginated-student', PaginatedStudentViewSet, basename='paginated-student')
 router.register(r'student', StudentViewSet, basename='student')
 router.register(r'assessment', AssessmentViewSet, basename='assessment')
 
