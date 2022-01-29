@@ -5,7 +5,6 @@ abstract class StudentBase {
   gender: 'male' | 'female' | 'undefined';
   diagnosis: string;
   clinician_name: string;
-  notes: string;
 }
 
 export class Student extends StudentBase {

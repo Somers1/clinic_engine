@@ -6,14 +6,21 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { AddAssessmentComponent } from './components/add-assessment/add-assessment.component';
 import { SchoolFormComponent } from './forms/school-form/school-form.component';
 import {FormsModule} from "@angular/forms";
-import {NbButtonModule, NbCardModule, NbDatepickerModule, NbInputModule, NbSelectModule} from "@nebular/theme";
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbDatepickerModule,
+  NbInputModule,
+  NbSelectModule,
+  NbTabsetModule
+} from "@nebular/theme";
 import {DialogModule} from "../dialog/dialog.module";
 import {Ng2SmartTableModule} from "ng2-smart-table";
 import { StudentFormComponent } from './forms/student-form/student-form.component';
 import { SchoolDashboardComponent } from './components/school-dashboard/school-dashboard.component';
 import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
 import { StudentInfoCardComponent } from './components/student-info-card/student-info-card.component';
-import { StudentActionCardComponent } from './components/student-action-card/student-action-card.component';
+import { StudentNoteTableComponent } from './components/student-note-table/student-note-table.component';
 
 
 
@@ -28,7 +35,7 @@ import { StudentActionCardComponent } from './components/student-action-card/stu
     SchoolDashboardComponent,
     StudentDashboardComponent,
     StudentInfoCardComponent,
-    StudentActionCardComponent
+    StudentNoteTableComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +46,8 @@ import { StudentActionCardComponent } from './components/student-action-card/stu
     NbSelectModule,
     DialogModule,
     Ng2SmartTableModule,
-    NbDatepickerModule.forRoot()
+    NbDatepickerModule.forRoot(),
+    NbTabsetModule
   ]
 })
 export class ClinicModule { }

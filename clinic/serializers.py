@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from clinic.models import Clinic, School, Student, Assessment
+from clinic.models import Clinic, School, Student, Assessment, StudentNote
 
 
 class ClinicSerializer(serializers.ModelSerializer):
@@ -17,6 +17,12 @@ class SchoolSerializer(serializers.ModelSerializer):
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
+        fields = '__all__'
+
+
+class StudentNoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StudentNote
         fields = '__all__'
 
 

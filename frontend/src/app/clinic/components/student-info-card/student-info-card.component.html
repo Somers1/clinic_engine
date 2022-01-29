@@ -1,34 +1,23 @@
-<nb-card>
-  <nb-card-header>
-    Student Information
-  </nb-card-header>
-  <nb-card-body>
-    <div class="center-flex-row">
-      <div class="left-flex-col">
-        <div class="info-container">
-          <span class="info-tag">Name:</span><span class="info-text">{{student?.name}}</span>
-        </div>
-        <div class="info-container">
-          <span class="info-tag">Gender:</span><span class="info-text">{{student?.gender | titlecase}}</span>
-        </div>
-        <div class="info-container">
-          <span class="info-tag">Date of Birth:</span><span class="info-text">{{student?.date_of_birth}}</span>
-        </div>
-      </div>
-      <div class="left-flex-col">
-        <div class="info-container">
-          <span class="info-tag">Diagnosis:</span><span class="info-text">{{student?.diagnosis}}</span>
-        </div>
-        <div class="info-container">
-          <span class="info-tag">Clinician Name:</span><span
-          class="info-text">{{student?.clinician_name | titlecase}}</span>
-        </div>
-
-      </div>
+<div class="center-flex-row">
+  <div class="left-flex-col">
+    <div class="info-container">
+      <span class="info-tag">Name:</span><span class="info-text">{{student?.name}}</span>
     </div>
     <div class="info-container">
-      <span class="info-tag">Notes:</span><span class="info-text">{{student?.notes}}</span>
+      <span class="info-tag">Gender:</span><span class="info-text">{{student?.gender | titlecase}}</span>
     </div>
-  </nb-card-body>
-</nb-card>
+    <div class="info-container">
+      <span class="info-tag">Date of Birth:</span><span class="info-text">{{student?.date_of_birth}}</span>
+    </div>
+  </div>
+  <div class="left-flex-col">
+    <div class="info-container">
+      <span class="info-tag">Diagnosis:</span><span class="info-text">{{student?.diagnosis}}</span>
+    </div>
+    <div class="info-container">
+      <span class="info-tag">Clinician Name:</span><span
+      class="info-text">{{student?.clinician_name | titlecase}}</span>
+    </div>
+  </div>
+</div>
 

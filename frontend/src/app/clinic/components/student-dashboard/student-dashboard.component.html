@@ -1,10 +1,15 @@
-<app-student-action-card></app-student-action-card>
-<app-student-info-card [student]="student"></app-student-info-card>
 <nb-card>
-  <nb-card-header>
-    Recent Assessment
-  </nb-card-header>
   <nb-card-body>
-    This is helpful assessment information
+    <nb-tabset>
+      <nb-tab tabTitle="Student Information">
+        <app-student-info-card [student]="student"></app-student-info-card>
+        <button class="action-button" nbButton>Edit Information</button>
+      </nb-tab>
+      <nb-tab tabTitle="Notes">
+        <app-student-note-table [studentId]="student.id"></app-student-note-table>
+      </nb-tab>
+    </nb-tabset>
   </nb-card-body>
+
 </nb-card>
+

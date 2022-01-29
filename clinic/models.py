@@ -47,7 +47,7 @@ class Student(models.Model):
         ordering = ('name',)
 
 
-class StudentNotes(models.Model):
+class StudentNote(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='notes')
     note = models.TextField(null=True, blank=True)
     note_date = models.DateTimeField(auto_now=True)
