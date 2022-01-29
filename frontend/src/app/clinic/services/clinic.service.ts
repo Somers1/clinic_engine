@@ -5,6 +5,7 @@ import {environment} from "../../../environments/environment";
 import {ServerDataSource} from "ng2-smart-table";
 import {Student} from "../models/student.model";
 import {DatePipe} from "@angular/common";
+import {Note} from "../models/note.model";
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,10 @@ export class ClinicService {
   postStudent(student: Student) {
     student.date_of_birth = this.datePipe.transform(student.date_of_birth, 'yyyy-MM-dd')
     return this.http.post<Student>(`${environment.apiUrl}api/clinic/student/`, student)
+  }
+
+  postNote(note: Note) {
+    return this.http.post<Note>(`${environment.apiUrl}api/clinic/student-note/`, note)
   }
 
   getSchools() {

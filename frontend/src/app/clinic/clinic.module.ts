@@ -22,6 +22,7 @@ import { StudentDashboardComponent } from './components/student-dashboard/studen
 import { StudentInfoCardComponent } from './components/student-info-card/student-info-card.component';
 import { StudentNoteTableComponent } from './components/student-note-table/student-note-table.component';
 import { StudentActionCardComponent } from './components/student-action-card/student-action-card.component';
+import { NoteFormDialogComponent } from './forms/note-form-dialog/note-form.component';
 
 
 
@@ -37,7 +38,8 @@ import { StudentActionCardComponent } from './components/student-action-card/stu
     StudentDashboardComponent,
     StudentInfoCardComponent,
     StudentNoteTableComponent,
-    StudentActionCardComponent
+    StudentActionCardComponent,
+    NoteFormDialogComponent
   ],
   imports: [
     CommonModule,
