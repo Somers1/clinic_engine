@@ -8,6 +8,7 @@ import { SchoolFormComponent } from './forms/school-form/school-form.component';
 import {FormsModule} from "@angular/forms";
 import {NbButtonModule, NbCardModule, NbInputModule, NbSelectModule} from "@nebular/theme";
 import {DialogModule} from "../dialog/dialog.module";
+import {Ng2SmartTableModule} from "ng2-smart-table";
 
 
 
@@ -26,7 +27,8 @@ import {DialogModule} from "../dialog/dialog.module";
     NbButtonModule,
     NbInputModule,
     NbSelectModule,
-    DialogModule
+    DialogModule,
+    Ng2SmartTableModule
   ]
 })
 export class ClinicModule { }
