@@ -1,36 +1,35 @@
-<div class="center-flex-col">
-  <div class="flex-col half-width">
-    <span class="required">Student Name:</span>
-    <input nbInput fullWidth [(ngModel)]="student.name">
-  </div>
-  <div class="flex-col half-width">
-    <span class="required">School:</span>
-    <nb-select fullWidth [(ngModel)]="student.school">
-      <nb-option *ngFor="let school of schools" [value]="school.id">{{school.name}}</nb-option>
-    </nb-select>
-  </div>
-  <div class="flex-col half-width">
-    <span>Date of Birth:</span>
-    <input nbInput
-           fullWidth
-           [(ngModel)]="student.date_of_birth"
-           [nbDatepicker]="date_picker">
-    <nb-datepicker #date_picker></nb-datepicker>
-  </div>
-
-  <div class="flex-col half-width">
-    <span>Gender:</span>
-    <nb-select fullWidth [(ngModel)]="student.gender">
-      <nb-option *ngFor="let type of genderTypes | keyvalue" [value]="type.value">{{type.value | titlecase}}</nb-option>
-    </nb-select>
-  </div>
-  <div class="flex-col half-width">
-    <span>Diagnosis:</span>
-    <input nbInput fullWidth [(ngModel)]="student.diagnosis">
-  </div>
-  <div class="flex-col half-width">
-    <span>Clinician Name:</span>
-    <input nbInput fullWidth [(ngModel)]="student.clinician_name">
-  </div>
+<div class="flex-col">
+  <span class="required">Student Name:</span>
+  <input nbInput fullWidth [(ngModel)]="student.name">
 </div>
+<div class="flex-col">
+  <span class="required">School:</span>
+  <nb-select fullWidth [(ngModel)]="student.school">
+    <nb-option *ngFor="let school of schools" [value]="school.id">{{school.name}}</nb-option>
+  </nb-select>
+</div>
+<div class="flex-col">
+  <span>Date of Birth:</span>
+  <input nbInput
+         fullWidth
+         [(ngModel)]="student.date_of_birth"
+         [nbDatepicker]="date_picker">
+  <nb-datepicker #date_picker></nb-datepicker>
+</div>
+
+<div class="flex-col">
+  <span>Gender:</span>
+  <nb-select fullWidth [(ngModel)]="student.gender">
+    <nb-option *ngFor="let type of genderTypes | keyvalue" [value]="type.value">{{type.value | titlecase}}</nb-option>
+  </nb-select>
+</div>
+<div class="flex-col">
+  <span>Diagnosis:</span>
+  <input nbInput fullWidth [(ngModel)]="student.diagnosis">
+</div>
+<div class="flex-col">
+  <span>Clinician Name:</span>
+  <input nbInput fullWidth [(ngModel)]="student.clinician_name">
+</div>
+
 

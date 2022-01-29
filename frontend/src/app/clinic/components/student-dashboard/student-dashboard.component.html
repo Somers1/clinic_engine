@@ -1,10 +1,13 @@
 <div *ngIf="student">
-  <app-student-action-card [studentId]="student.id"></app-student-action-card>
+  <app-student-action-card [student]="student" (studentChange)="onStudentChange($event)"></app-student-action-card>
   <nb-card>
     <nb-card-body>
       <nb-tabset>
-        <nb-tab tabTitle="Student Information">
+        <nb-tab tabTitle="Information">
           <app-student-info-card [student]="student"></app-student-info-card>
+        </nb-tab>
+        <nb-tab tabTitle="Assessments">
+          <span>This is assessment information</span>
         </nb-tab>
         <nb-tab tabTitle="Notes">
           <app-student-note-table [studentId]="student.id"></app-student-note-table>

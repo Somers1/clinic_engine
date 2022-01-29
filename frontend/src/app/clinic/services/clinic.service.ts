@@ -53,6 +53,11 @@ export class ClinicService {
     return this.http.post<Note>(`${environment.apiUrl}api/clinic/student-note/`, note)
   }
 
+  patchStudent(student: Student) {
+    student.date_of_birth = this.datePipe.transform(student.date_of_birth, 'yyyy-MM-dd')
+    return this.http.patch<Student>(`${environment.apiUrl}api/clinic/student/${student.id}/`, student)
+  }
+
   getSchools() {
     return this.http.get<School[]>(`${environment.apiUrl}api/clinic/school/`)
   }
