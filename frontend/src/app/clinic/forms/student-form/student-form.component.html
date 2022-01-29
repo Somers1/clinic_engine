@@ -1,10 +1,10 @@
 <div class="center-flex-col">
   <div class="flex-col half-width">
-    <span>Student Name:</span>
+    <span class="required">Student Name:</span>
     <input nbInput fullWidth [(ngModel)]="student.name">
   </div>
   <div class="flex-col half-width">
-    <span>School:</span>
+    <span class="required">School:</span>
     <nb-select fullWidth [(ngModel)]="student.gender">
       <nb-option *ngFor="let school of schools" [value]="school.id">{{school.name}}</nb-option>
     </nb-select>
