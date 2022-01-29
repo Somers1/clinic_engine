@@ -1,4 +1,5 @@
 abstract class SchoolBase {
+  id:string;
   name: string;
   contact_email: string;
   contact_phone: string;

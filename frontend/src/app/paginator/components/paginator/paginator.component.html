@@ -1,0 +1,16 @@
+<div class="paginator-container">
+  <div class="button-container">
+    <button *ngIf="currentPage != pageArray?.[0] && pageArray.length > 0" class="page-button" (click)="onPreviousPage()"><</button>
+  </div>
+  <div class="button-container" *ngFor="let page of displayedPageArray">
+    <button class="page-button" (click)="onPageChange(page)"
+            [ngStyle]=" page === currentPage ? {'background': 'var(--color-primary-default)', 'color': 'white'} : {}">
+      {{page}}
+    </button>
+  </div>
+  <div class="button-container">
+    <button *ngIf="currentPage != pageArray?.[pageArray.length - 1] && pageArray.length > 0"
+            class="page-button"
+            (click)="onNextPage()">></button>
+  </div>
+</div>

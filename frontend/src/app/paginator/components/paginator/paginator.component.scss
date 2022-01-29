@@ -1,0 +1,38 @@
+.paginator-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.button-container {
+  background: white;
+  border-radius: 5px;
+}
+.page-button {
+  background-color: var(--button-filled-basic-background-color);
+  border-color: var(--button-filled-basic-border-color);
+  color: var(--button-filled-basic-text-color);
+  padding: var(--button-filled-medium-padding);
+  border-style: var(--button-filled-border-style);
+  border-width: var(--button-filled-border-width);
+  text-transform: var(--button-filled-text-transform);
+  border-radius: var(--button-rectangle-border-radius);
+  font-size: var(--button-medium-text-font-size);
+  line-height: var(--button-medium-text-line-height);
+  appearance: none;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: var(--button-cursor);
+  font-family: var(--button-text-font-family);
+  font-weight: var(--button-text-font-weight);
+}
+
+.page-button:hover {
+  background-color: var(--button-filled-basic-hover-background-color);
+  border-color: var(--button-filled-basic-hover-border-color);
+}

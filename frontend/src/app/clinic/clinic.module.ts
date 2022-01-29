@@ -7,6 +7,7 @@ import { AddAssessmentComponent } from './components/add-assessment/add-assessme
 import { SchoolFormComponent } from './forms/school-form/school-form.component';
 import {FormsModule} from "@angular/forms";
 import {NbButtonModule, NbCardModule, NbInputModule, NbSelectModule} from "@nebular/theme";
+import {DialogModule} from "../dialog/dialog.module";
 
 
 
@@ -24,7 +25,8 @@ import {NbButtonModule, NbCardModule, NbInputModule, NbSelectModule} from "@nebu
     NbCardModule,
     NbButtonModule,
     NbInputModule,
-    NbSelectModule
+    NbSelectModule,
+    DialogModule
   ]
 })
 export class ClinicModule { }
