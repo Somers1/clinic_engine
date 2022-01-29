@@ -15,7 +15,7 @@ export class ClinicService {
 
   getSchoolServerSource() {
     return new ServerDataSource(this.http, {
-      endPoint: `${environment.apiUrl}api/clinic/school/`,
+      endPoint: `${environment.apiUrl}api/clinic/paginated-school/`,
       dataKey: 'results',
       totalKey: 'count',
       pagerPageKey: 'page',
@@ -31,5 +31,9 @@ export class ClinicService {
 
   postStudent(student: Student) {
     return this.http.post<Student>(`${environment.apiUrl}api/clinic/student/`, student)
+  }
+
+  getSchools(){
+    return this.http.get<School[]>(`${environment.apiUrl}api/clinic/school/`)
   }
 }

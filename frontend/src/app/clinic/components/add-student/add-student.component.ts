@@ -19,7 +19,10 @@ export class AddStudentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.clinicService.getSchools().subscribe({
+      next: res => console.log(res),
+      error: res => console.log(res),
+    })
   }
 
   onSubmit() {
@@ -30,7 +33,7 @@ export class AddStudentComponent implements OnInit {
         next: () => this.router.navigate(['pages/dashboard'])
       }),
       error: res => this.dialogService.open(OkDialogComponent, {
-        context: {body: 'Failed to add school. Ensure all required fields are filled.', title: 'Failed'}
+        context: {body: 'Failed to add student. Ensure all required fields are filled.', title: 'Failed'}
       }),
     })
   }

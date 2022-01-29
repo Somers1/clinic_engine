@@ -12,6 +12,11 @@ class ClinicViewSet(ModelViewSet):
 class SchoolViewSet(ModelViewSet):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
+
+
+class PaginatedSchoolViewSet(ModelViewSet):
+    queryset = School.objects.all()
+    serializer_class = SchoolSerializer
     pagination_class = AngularPaginator
     search_fields = ['name', 'address', 'contact_name', 'contact_email', 'contact_phone']
     ordering_fields = ['name', 'address', 'contact_name', 'contact_email', 'contact_phone']
