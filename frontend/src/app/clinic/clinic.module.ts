@@ -21,6 +21,7 @@ import { SchoolDashboardComponent } from './components/school-dashboard/school-d
 import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
 import { StudentInfoCardComponent } from './components/student-info-card/student-info-card.component';
 import { StudentNoteTableComponent } from './components/student-note-table/student-note-table.component';
+import { StudentActionCardComponent } from './components/student-action-card/student-action-card.component';
 
 
 
@@ -35,7 +36,8 @@ import { StudentNoteTableComponent } from './components/student-note-table/stude
     SchoolDashboardComponent,
     StudentDashboardComponent,
     StudentInfoCardComponent,
-    StudentNoteTableComponent
+    StudentNoteTableComponent,
+    StudentActionCardComponent
   ],
   imports: [
     CommonModule,

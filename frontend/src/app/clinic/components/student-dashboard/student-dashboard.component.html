@@ -1,15 +1,17 @@
-<nb-card>
-  <nb-card-body>
-    <nb-tabset>
-      <nb-tab tabTitle="Student Information">
-        <app-student-info-card [student]="student"></app-student-info-card>
-        <button class="action-button" nbButton>Edit Information</button>
-      </nb-tab>
-      <nb-tab tabTitle="Notes">
-        <app-student-note-table [studentId]="student.id"></app-student-note-table>
-      </nb-tab>
-    </nb-tabset>
-  </nb-card-body>
+<div *ngIf="student">
+  <app-student-action-card [studentId]="student.id"></app-student-action-card>
+  <nb-card>
+    <nb-card-body>
+      <nb-tabset>
+        <nb-tab tabTitle="Student Information">
+          <app-student-info-card [student]="student"></app-student-info-card>
+        </nb-tab>
+        <nb-tab tabTitle="Notes">
+          <app-student-note-table [studentId]="student.id"></app-student-note-table>
+        </nb-tab>
+      </nb-tabset>
+    </nb-card-body>
+  </nb-card>
+</div>
 
-</nb-card>
 
