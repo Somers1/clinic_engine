@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {OkDialogComponent} from "../../../dialog/components/ok-dialog/ok-dialog.component";
 import {Student} from "../../models/student.model";
 import {ClinicService} from "../../services/clinic.service";
+import {School} from "../../models/school.model";
 
 @Component({
   selector: 'app-add-student',
@@ -12,7 +13,7 @@ import {ClinicService} from "../../services/clinic.service";
 })
 export class AddStudentComponent implements OnInit {
   student: Student = new Student()
-
+  schools: School[]
   constructor(private clinicService: ClinicService,
               private dialogService: NbDialogService,
               private router: Router) {
@@ -20,7 +21,7 @@ export class AddStudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.clinicService.getSchools().subscribe({
-      next: res => console.log(res),
+      next: res => this.schools = res,
       error: res => console.log(res),
     })
   }

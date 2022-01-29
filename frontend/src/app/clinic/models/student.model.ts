@@ -11,3 +11,5 @@ abstract class StudentBase {
 export class Student extends StudentBase {
   school:string;
 }
+
+export const gender_types = {MALE:'male', FEMALE:'female', UNDEFINED:'undefined'}

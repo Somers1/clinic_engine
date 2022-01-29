@@ -1,0 +1,35 @@
+<div class="center-flex-col">
+  <div class="flex-col half-width">
+    <span>Student Name:</span>
+    <input nbInput fullWidth [(ngModel)]="student.name">
+  </div>
+  <div class="flex-col half-width">
+    <span>School:</span>
+    <nb-select fullWidth [(ngModel)]="student.gender">
+      <nb-option *ngFor="let school of schools" [value]="school.id">{{school.name}}</nb-option>
+    </nb-select>
+  </div>
+  <div class="flex-col half-width">
+    <span>Grade:</span>
+    <input nbInput fullWidth [(ngModel)]="student.grade">
+  </div>
+  <div class="flex-col half-width">
+    <span>Gender:</span>
+    <nb-select fullWidth [(ngModel)]="student.gender">
+      <nb-option *ngFor="let type of genderTypes | keyvalue" [value]="type.value">{{type.value | titlecase}}</nb-option>
+    </nb-select>
+  </div>
+  <div class="flex-col half-width">
+    <span>Diagnosis:</span>
+    <input nbInput fullWidth [(ngModel)]="student.diagnosis">
+  </div>
+  <div class="flex-col half-width">
+    <span>Clinician Name:</span>
+    <input nbInput fullWidth [(ngModel)]="student.clinician_name">
+  </div>
+  <div class="flex-col half-width">
+    <span>Notes:</span>
+    <textarea nbInput fullWidth [(ngModel)]="student.notes"></textarea>
+  </div>
+</div>
+

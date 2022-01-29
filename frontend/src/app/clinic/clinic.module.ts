@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import {NbButtonModule, NbCardModule, NbInputModule, NbSelectModule} from "@nebular/theme";
 import {DialogModule} from "../dialog/dialog.module";
 import {Ng2SmartTableModule} from "ng2-smart-table";
+import { StudentFormComponent } from './forms/student-form/student-form.component';
 
 
 
@@ -18,7 +19,8 @@ import {Ng2SmartTableModule} from "ng2-smart-table";
     AddSchoolComponent,
     AddStudentComponent,
     AddAssessmentComponent,
-    SchoolFormComponent
+    SchoolFormComponent,
+    StudentFormComponent
   ],
   imports: [
     CommonModule,
