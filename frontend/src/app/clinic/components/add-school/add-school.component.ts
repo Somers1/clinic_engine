@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {School} from "../../models/school.model";
-import {SchoolService} from "../../services/school.service";
 import {NbDialogService} from "@nebular/theme";
 import {OkDialogComponent} from "../../../dialog/components/ok-dialog/ok-dialog.component";
 import {Router} from "@angular/router";
+import {ClinicService} from "../../services/clinic.service";
 
 @Component({
   selector: 'app-add-school',
@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
 export class AddSchoolComponent implements OnInit {
   school: School = new School()
 
-  constructor(private schoolService: SchoolService,
+  constructor(private clinicService: ClinicService,
               private dialogService: NbDialogService,
               private router: Router) {
   }
@@ -22,7 +22,7 @@ export class AddSchoolComponent implements OnInit {
   }
 
   onSubmit() {
-    this.schoolService.postSchool(this.school).subscribe({
+    this.clinicService.postSchool(this.school).subscribe({
       next: res => this.dialogService.open(OkDialogComponent, {
         context: {body: 'School Added!', title: 'Success'}
       }).onClose.subscribe({

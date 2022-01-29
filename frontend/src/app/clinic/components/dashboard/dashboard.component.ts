@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServerDataSource} from "ng2-smart-table";
-import {SchoolService} from "../../services/school.service";
 import {School} from "../../models/school.model";
+import {ClinicService} from "../../services/clinic.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -39,10 +39,10 @@ export class DashboardComponent implements OnInit {
   },
   }
   source: ServerDataSource
-  constructor(private schoolService:SchoolService) { }
+  constructor(private clinicService:ClinicService) { }
 
   ngOnInit(): void {
-    this.source = this.schoolService.getSchoolServerSource();
+    this.source = this.clinicService.getSchoolServerSource();
   }
 
   onRowSelect(event: any) {
