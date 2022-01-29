@@ -14,6 +14,7 @@ import {School} from "../../models/school.model";
 export class AddStudentComponent implements OnInit {
   student: Student = new Student()
   schools: School[]
+
   constructor(private clinicService: ClinicService,
               private dialogService: NbDialogService,
               private router: Router) {
@@ -33,9 +34,12 @@ export class AddStudentComponent implements OnInit {
       }).onClose.subscribe({
         next: () => this.router.navigate(['pages/dashboard'])
       }),
-      error: res => this.dialogService.open(OkDialogComponent, {
-        context: {body: 'Failed to add student. Ensure all required fields are filled.', title: 'Failed'}
-      }),
+      error: res => {
+        console.log(res)
+        this.dialogService.open(OkDialogComponent, {
+          context: {body: 'Failed to add student. Ensure all required fields are filled.', title: 'Failed'}
+        })
+      }
     })
   }
 
