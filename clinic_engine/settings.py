@@ -165,5 +165,4 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
         'rest_framework.parsers.FileUploadParser',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'clinic_engine.pagination.AngularPaginator',
 }
