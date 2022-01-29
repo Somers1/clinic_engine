@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NbDialogService} from "@nebular/theme";
 import {NoteFormDialogComponent} from "../../forms/note-form-dialog/note-form.component";
 import {ClinicService} from "../../services/clinic.service";
@@ -12,6 +12,7 @@ import {OkDialogComponent} from "../../../dialog/components/ok-dialog/ok-dialog.
 })
 export class StudentActionCardComponent {
   @Input() studentId: string
+  @Output() onNoteSave = new EventEmitter()
 
   constructor(private dialogService: NbDialogService,
               private clinicService: ClinicService) {
@@ -34,7 +35,8 @@ export class StudentActionCardComponent {
       this.clinicService.postNote(note)
         .subscribe({
           next: () => this.dialogService.open(OkDialogComponent,
-            {context: {title: 'Success', body: 'Note Saved Successfully!'}}),
+            {context: {title: 'Success', body: 'Saved Successfully!'}})
+            .onClose.subscribe(() => this.onNoteSave.emit()),
           error: () => this.dialogService.open(OkDialogComponent,
             {context: {title: 'Failed', body: 'Note save failed.'}}),
         })

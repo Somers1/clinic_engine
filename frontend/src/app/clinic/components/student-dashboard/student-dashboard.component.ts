@@ -20,5 +20,4 @@ export class StudentDashboardComponent implements OnInit {
       this.clinicService.getStudent(params['studentId']).subscribe(res => this.student = res)
     })
   }
-
 }

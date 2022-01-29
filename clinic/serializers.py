@@ -25,6 +25,12 @@ class StudentNoteSerializer(serializers.ModelSerializer):
         model = StudentNote
         fields = '__all__'
 
+    def create(self, validated_data):
+        user = self.context['request'].user
+        if user:
+            validated_data['note_taker'] = f"{user.first_name} {user.last_name}"
+        return super().create(validated_data)
+
 
 class AssessmentSerializer(serializers.ModelSerializer):
     class Meta:

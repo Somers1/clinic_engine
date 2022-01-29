@@ -42,7 +42,7 @@ class PaginatedStudentViewSet(ModelViewSet):
 
 
 class StudentNoteViewSet(ModelViewSet):
-    queryset = StudentNote.objects.all().order_by('note_date')
+    queryset = StudentNote.objects.all().order_by('-note_date')
     serializer_class = StudentNoteSerializer
     pagination_class = AngularPaginator
     search_fields = ['note', 'note_date', 'note_taker']
