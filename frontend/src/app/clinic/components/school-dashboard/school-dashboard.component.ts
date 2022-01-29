@@ -3,6 +3,7 @@ import {ServerDataSource} from "ng2-smart-table";
 import {ClinicService} from "../../services/clinic.service";
 import {Student} from "../../models/student.model";
 import {School} from "../../models/school.model";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-school-dashboard',
@@ -32,12 +33,19 @@ export class SchoolDashboardComponent implements OnInit {
     },
   }
   source: ServerDataSource
+  school: School
 
-  constructor(private clinicService: ClinicService) {
+  constructor(private clinicService: ClinicService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.source = this.clinicService.getStudentServerSource();
+    this.route.params.subscribe({
+      next: params => {
+        this.clinicService.getSchool(params['schoolId']).subscribe(res => this.school = res)
+      }
+    })
   }
 
   onRowSelect(event: any) {

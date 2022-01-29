@@ -44,4 +44,8 @@ export class ClinicService {
   getSchools() {
     return this.http.get<School[]>(`${environment.apiUrl}api/clinic/school/`)
   }
+
+  getSchool(id:string) {
+    return this.http.get<School>(`${environment.apiUrl}api/clinic/school/${id}/`)
+  }
 }
