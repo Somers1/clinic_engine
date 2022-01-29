@@ -1,0 +1,7 @@
+django
+gunicorn
+django-filter
+django-cors-headers
+djangorestframework
+
+

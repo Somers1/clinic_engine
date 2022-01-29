@@ -1,0 +1,18 @@
+[django]
+DEBUG = True
+log_level = INFO
+allowed_hosts = 127.0.0.1, localhost
+cross_origin_whitelist = http://127.0.0.1:3000, http://localhost:3000
+csrf_trusted_origins = http://127.0.0.1:3000, http://localhost:3000, http://127.0.0.1:8000, http://localhost:8000
+cors_allowed_origin = http://localhost:4200, http://127.0.0.1:4200, http://127.0.0.1:8000, http://localhost:8000
+
+[database]
+name = recruitment_engine
+user = postgres
+pass =
+host = localhost
+
+[redis]
+host = localhost
+port = 6379
+db = 0
