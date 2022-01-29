@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddSchoolComponent } from './components/add-school/add-school.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { AddAssessmentComponent } from './components/add-assessment/add-assessment.component';
+import { SchoolFormComponent } from './forms/school-form/school-form.component';
 
 
 
@@ -12,7 +13,8 @@ import { AddAssessmentComponent } from './components/add-assessment/add-assessme
     DashboardComponent,
     AddSchoolComponent,
     AddStudentComponent,
-    AddAssessmentComponent
+    AddAssessmentComponent,
+    SchoolFormComponent
   ],
   imports: [
     CommonModule
