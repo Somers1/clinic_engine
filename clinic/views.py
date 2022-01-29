@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from models import Clinic, School, Student, Assessment
-from serializers import ClinicSerializer, StudentSerializer, SchoolSerializer, AssessmentSerializer
+from clinic.models import Clinic, School, Student, Assessment
+from clinic.serializers import ClinicSerializer, StudentSerializer, SchoolSerializer, AssessmentSerializer
 
 
 class ClinicViewSet(ModelViewSet):

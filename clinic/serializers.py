@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import Clinic, School, Student, Assessment
+from clinic.models import Clinic, School, Student, Assessment
 
 
 class ClinicSerializer(serializers.ModelSerializer):

@@ -40,7 +40,7 @@ export class AuthInterceptor implements HttpInterceptor {
         'Authorization': `Token ${this.token}`,
       },
     });
-    // console.log(req)
+    console.log(req)
     return next.handle(req);
   }
 }
