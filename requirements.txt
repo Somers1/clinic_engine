@@ -1,6 +1,7 @@
 django
 gunicorn
 django-filter
+psycopg2-binary
 django-cors-headers
 djangorestframework
 
