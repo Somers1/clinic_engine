@@ -1,0 +1,25 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <h4 class="header-left-container">
+      <a style="text-decoration: none;" routerLink="/pages/dashboard" routerLinkActive="active">
+        Lynxx Recruitment Engine
+      </a>
+    </h4>
+    <div class="header-right-container">
+      <nb-actions size="small">
+        <nb-action nbTooltip="Create Job" icon="plus-outline" (click)="navTo('create')"></nb-action>
+        <nb-action nbTooltip="Home" icon="home-outline" (click)="navTo('dashboard')"></nb-action>
+        <nb-action nbTooltip="My Account" icon="person-outline"  (click)="navTo('profile')"></nb-action>
+        <nb-action nbTooltip="My Saved Jobs" icon="star-outline"  (click)="navTo('saved')"></nb-action>
+        <nb-action>
+          <button *ngIf="loggedIn" class="generic-button" (click)="onLogout()">Logout</button>
+          <button *ngIf="!loggedIn" class="generic-button" (click)="onLogin()">Login</button>
+        </nb-action>
+      </nb-actions>
+    </div>
+  </nb-layout-header>
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>
+

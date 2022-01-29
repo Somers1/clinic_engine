@@ -1,0 +1,47 @@
+<div style="display: flex; flex-direction: column;align-items: center">
+
+<nb-alert *ngIf="error" outline="danger" role="alert">
+   <p class="alert-title"><b>Incorrect username or password.</b></p>
+</nb-alert>
+
+<form (ngSubmit)="login()" [formGroup]="loginForm" aria-labelledby="title">
+  <h3 class="title">Lynxx Recruitment Engine</h3>
+  <div class="form-control-group">
+    <label class="label" for="input-email">Email address:</label>
+    <input nbInput
+           fullWidth
+           formControlName="username"
+           name="email"
+           id="input-email"
+           pattern=".+@.+\..+"
+           placeholder="Email address"
+           fieldSize="large"
+           autofocus
+           autocomplete="on"
+           required="required">
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-password">Password:</label>
+    <input nbInput
+           fullWidth
+           name="password"
+           type="password"
+           autocomplete="on"
+           formControlName="password"
+           id="input-password"
+           placeholder="password"
+           required="required">
+  </div>
+
+   <button nbButton
+          fullWidth
+          status="primary"
+          size="large">
+    Log In
+  </button>
+</form>
+</div>
+<section class="another-action" aria-label="Register">
+  Don't have an account? <a class="text-link" (click)="onRegister()">Register</a>
+</section>
