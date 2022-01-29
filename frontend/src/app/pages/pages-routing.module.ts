@@ -5,6 +5,7 @@ import {PagesComponent} from "./pages.component";
 import {AddSchoolComponent} from "../clinic/components/add-school/add-school.component";
 import {AddAssessmentComponent} from "../clinic/components/add-assessment/add-assessment.component";
 import {AddStudentComponent} from "../clinic/components/add-student/add-student.component";
+import {SchoolDashboardComponent} from "../clinic/components/school-dashboard/school-dashboard.component";
 
 const routes: Routes = [{
   path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [{
     {
       path: 'add-assessment',
       component: AddAssessmentComponent,
+    },
+    {
+      path: 'school-dashboard/:schoolId',
+      component: SchoolDashboardComponent,
     },
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     {path: '**', redirectTo: 'dashboard'},

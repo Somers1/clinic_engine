@@ -24,3 +24,11 @@ class AssessmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assessment
         fields = '__all__'
+
+
+class StudentSchoolSerializer(serializers.ModelSerializer):
+    school = SchoolSerializer(read_only=True)
+
+    class Meta:
+        model = Student
+        fields = '__all__'

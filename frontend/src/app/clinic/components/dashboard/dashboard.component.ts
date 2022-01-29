@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ServerDataSource} from "ng2-smart-table";
 import {School} from "../../models/school.model";
 import {ClinicService} from "../../services/clinic.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -39,13 +40,15 @@ export class DashboardComponent implements OnInit {
   },
   }
   source: ServerDataSource
-  constructor(private clinicService:ClinicService) { }
+  constructor(private clinicService:ClinicService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.source = this.clinicService.getSchoolServerSource();
   }
 
   onRowSelect(event: any) {
-    console.log(<School>event.data)
+    const selectedSchool = <School>event.data
+    this.router.navigate([`pages/school-dashboard/${selectedSchool.id}`]).catch()
   }
 }

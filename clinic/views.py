@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from clinic.models import Clinic, School, Student, Assessment
 from clinic.serializers import ClinicSerializer, StudentSerializer, SchoolSerializer, AssessmentSerializer
+from clinic.serializers import StudentSchoolSerializer
 from clinic_engine.pagination import AngularPaginator
 
 
@@ -14,6 +15,16 @@ class SchoolViewSet(ModelViewSet):
     serializer_class = SchoolSerializer
 
 
+class StudentViewSet(ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+
+class AssessmentViewSet(ModelViewSet):
+    queryset = Assessment.objects.all()
+    serializer_class = AssessmentSerializer
+
+
 class PaginatedSchoolViewSet(ModelViewSet):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
@@ -22,19 +33,9 @@ class PaginatedSchoolViewSet(ModelViewSet):
     ordering_fields = ['name', 'address', 'contact_name', 'contact_email', 'contact_phone']
 
 
-class StudentViewSet(ModelViewSet):
+class PaginatedStudentViewSet(ModelViewSet):
     queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+    serializer_class = StudentSchoolSerializer
     pagination_class = AngularPaginator
     search_fields = ['name']
     ordering_fields = ['name']
-
-
-class PaginatedStudentViewSet(ModelViewSet):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-
-
-class AssessmentViewSet(ModelViewSet):
-    queryset = Assessment.objects.all()
-    serializer_class = AssessmentSerializer
