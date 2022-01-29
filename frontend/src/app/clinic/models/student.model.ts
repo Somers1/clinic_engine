@@ -1,6 +1,5 @@
 abstract class StudentBase {
   id:string;
-  grade:string;
   name:string;
   date_of_birth:Date;
   gender: 'male' | 'female' | 'undefined';

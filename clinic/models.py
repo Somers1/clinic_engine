@@ -37,7 +37,6 @@ class Student(models.Model):
         (MALE, MALE.title()), (FEMALE, FEMALE.title()), (UNDEFINED, UNDEFINED.title())
     ]
     school = models.ForeignKey(School, on_delete=models.CASCADE, related_name='students')
-    grade = models.CharField(max_length=255, null=True, blank=True)
     name = models.CharField(max_length=255)
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=255, choices=genders)
@@ -50,5 +49,7 @@ class Assessment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='assessments')
     bot_score = models.CharField(max_length=255, null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
+    year_grade = models.CharField(max_length=255, null=True, blank=True)
+
 
 
