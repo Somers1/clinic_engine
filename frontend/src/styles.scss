@@ -52,6 +52,12 @@
   align-items: center;
   width: 100%;
 }
+.left-flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
 .submit-button{
   margin-top: 10px;
 }
@@ -70,4 +76,16 @@ input {
 .required:after {
   content: " *";
   color: red;
+}
+.info-tag{
+  opacity: 60%;
+  margin-right: 20px;
+  font-size: large;
+}
+.info-text {
+  font-weight: 600;
+  font-size: large;
+}
+.info-container {
+  margin: 15px;
 }

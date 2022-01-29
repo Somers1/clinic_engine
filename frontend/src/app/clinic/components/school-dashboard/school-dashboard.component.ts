@@ -3,7 +3,7 @@ import {ServerDataSource} from "ng2-smart-table";
 import {ClinicService} from "../../services/clinic.service";
 import {Student} from "../../models/student.model";
 import {School} from "../../models/school.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-school-dashboard',
@@ -36,7 +36,8 @@ export class SchoolDashboardComponent implements OnInit {
   school: School
 
   constructor(private clinicService: ClinicService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router:Router) {
   }
 
   ngOnInit(): void {
@@ -50,5 +51,6 @@ export class SchoolDashboardComponent implements OnInit {
 
   onRowSelect(event: any) {
     const selectedStudent = <Student>event.data
+    this.router.navigate([`pages/student-dashboard/${selectedStudent.id}`]).catch()
   }
 }

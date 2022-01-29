@@ -10,6 +10,15 @@
     </nb-select>
   </div>
   <div class="flex-col half-width">
+    <span>Date of Birth:</span>
+    <input nbInput
+           fullWidth
+           [(ngModel)]="student.date_of_birth"
+           [nbDatepicker]="date_picker">
+    <nb-datepicker #date_picker></nb-datepicker>
+  </div>
+
+  <div class="flex-col half-width">
     <span>Gender:</span>
     <nb-select fullWidth [(ngModel)]="student.gender">
       <nb-option *ngFor="let type of genderTypes | keyvalue" [value]="type.value">{{type.value | titlecase}}</nb-option>

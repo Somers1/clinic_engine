@@ -1,5 +1,5 @@
 <nb-card>
-  <nb-card-header><h6>Students from {{school?.name}}</h6></nb-card-header>
+  <nb-card-header>Students from {{school?.name}}</nb-card-header>
   <nb-card-body>
     <ng2-smart-table [settings]="tableSettings" [source]="source" (userRowSelect)="onRowSelect($event)">
     </ng2-smart-table>
