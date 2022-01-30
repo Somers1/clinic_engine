@@ -55,15 +55,23 @@ class StudentNote(models.Model):
 
 
 class Assessment(models.Model):
+    AVERAGE = 'average'
+    BELOW_AVERAGE = 'below average'
+    WELL_BELOW_AVERAGE = 'well below average'
+    scores = [
+        (AVERAGE, AVERAGE.title()), (BELOW_AVERAGE, BELOW_AVERAGE.title()),
+        (WELL_BELOW_AVERAGE, WELL_BELOW_AVERAGE.title())
+    ]
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='assessments')
-    bot_score = models.CharField(max_length=255, null=True, blank=True)
-    beery_score = models.CharField(max_length=255, null=True, blank=True)
+    bot_score = models.CharField(max_length=255, choices=scores, null=True, blank=True)
+    bot_percentile = models.IntegerField(null=True, blank=True)
+    beery_score = models.CharField(max_length=255, choices=scores, null=True, blank=True)
+    beery_percentile = models.IntegerField(null=True, blank=True)
+    mc_masters_score = models.FloatField(null=True, blank=True)
+    mc_masters_percentile = models.IntegerField(null=True, blank=True)
+    self_reg_score = models.CharField(max_length=255, null=True, blank=True)
+    self_reg_percentile = models.IntegerField(null=True, blank=True)
     summary = models.TextField(null=True, blank=True)
     year_grade = models.CharField(max_length=255, null=True, blank=True)
     report_due = models.DateField(null=True, blank=True)
-    complete = models.BooleanField(default=False)
-
-
-
-
-
+    completed_by = models.CharField(max_length=255, null=True, blank=True)

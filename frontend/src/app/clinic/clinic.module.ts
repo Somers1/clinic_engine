@@ -24,6 +24,8 @@ import { StudentNoteTableComponent } from './components/student-note-table/stude
 import { StudentActionCardComponent } from './components/student-action-card/student-action-card.component';
 import { NoteFormDialogComponent } from './forms/note-form-dialog/note-form.component';
 import { EditStudentInfoDialogComponent } from './components/edit-student-info-dialog/edit-student-info-dialog.component';
+import { AssessmentFormComponent } from './forms/assessment-form/assessment-form.component';
+import { AddAssessmentDialogComponent } from './components/add-assessment-dialog/add-assessment-dialog.component';
 
 
 
@@ -41,7 +43,9 @@ import { EditStudentInfoDialogComponent } from './components/edit-student-info-d
     StudentNoteTableComponent,
     StudentActionCardComponent,
     NoteFormDialogComponent,
-    EditStudentInfoDialogComponent
+    EditStudentInfoDialogComponent,
+    AssessmentFormComponent,
+    AddAssessmentDialogComponent,
   ],
   imports: [
     CommonModule,

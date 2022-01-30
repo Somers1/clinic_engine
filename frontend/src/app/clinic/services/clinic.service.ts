@@ -6,6 +6,7 @@ import {ServerDataSource} from "ng2-smart-table";
 import {Student} from "../models/student.model";
 import {DatePipe} from "@angular/common";
 import {Note} from "../models/note.model";
+import {Assessment} from "../models/assessment.model";
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,7 @@ export class ClinicService {
     return this.serverSourceConf('api/clinic/paginated-student/')
   }
 
-  getStudentNoteServerSource(studentId:string) {
+  getStudentNoteServerSource(studentId: string) {
     return this.serverSourceConf(`api/clinic/student-note/?student=${studentId}`)
   }
 
@@ -51,6 +52,11 @@ export class ClinicService {
 
   postNote(note: Note) {
     return this.http.post<Note>(`${environment.apiUrl}api/clinic/student-note/`, note)
+  }
+
+  postAssessment(assessment: Assessment) {
+    assessment.report_due = this.datePipe.transform(assessment.report_due, 'yyyy-MM-dd')
+    return this.http.post<Assessment>(`${environment.apiUrl}api/clinic/assessment/`, assessment)
   }
 
   patchStudent(student: Student) {

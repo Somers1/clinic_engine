@@ -6,21 +6,24 @@ import {Note} from "../../models/note.model";
 import {OkDialogComponent} from "../../../dialog/components/ok-dialog/ok-dialog.component";
 import {EditStudentInfoDialogComponent} from "../edit-student-info-dialog/edit-student-info-dialog.component";
 import {Student} from "../../models/student.model";
+import {AddAssessmentDialogComponent} from "../add-assessment-dialog/add-assessment-dialog.component";
+import {Assessment} from "../../models/assessment.model";
 
 @Component({
   selector: 'app-student-action-card',
   templateUrl: './student-action-card.component.html',
   styleUrls: ['./student-action-card.component.scss']
 })
-export class StudentActionCardComponent{
+export class StudentActionCardComponent {
   @Input() student!: Student;
   @Output() studentChange = new EventEmitter<Student>();
-
+  assessment:Assessment = new Assessment()
   constructor(private dialogService: NbDialogService,
               private clinicService: ClinicService) {
   }
+
   onEditInfo() {
-    this.dialogService.open(EditStudentInfoDialogComponent, {context:{student: {...this.student}}})
+    this.dialogService.open(EditStudentInfoDialogComponent, {context: {student: {...this.student}}})
       .onClose.subscribe(student => {
       if (!student) return
       this.clinicService.patchStudent(student)
@@ -37,7 +40,19 @@ export class StudentActionCardComponent{
   }
 
   onAddAssessment() {
-
+    this.dialogService.open(AddAssessmentDialogComponent, {context: {assessment: this.assessment}})
+      .onClose.subscribe(assessment => {
+      if (!assessment) return
+      this.clinicService.postAssessment(assessment)
+        .subscribe({
+          next: res => {
+            this.dialogService.open(OkDialogComponent,
+              {context: {title: 'Success', body: 'Saved Successfully!'}})
+          },
+          error: () => this.dialogService.open(OkDialogComponent,
+            {context: {title: 'Failed', body: 'Note save failed.'}}),
+        })
+    })
   }
 
   onAddNote() {

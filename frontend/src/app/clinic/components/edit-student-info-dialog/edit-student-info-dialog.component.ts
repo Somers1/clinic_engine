@@ -12,7 +12,7 @@ export class EditStudentInfoDialogComponent implements OnInit {
 
   @Input() student:Student
 
-  constructor(protected ref: NbDialogRef<NoteFormDialogComponent>) {
+  constructor(protected ref: NbDialogRef<EditStudentInfoDialogComponent>) {
   }
 
   ngOnInit(): void {

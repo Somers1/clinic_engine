@@ -1,0 +1,48 @@
+<div class="flex-col">
+  <span class="required">Bot Score:</span>
+  <nb-select fullWidth [(ngModel)]="assessment.bot_score">
+    <nb-option *ngFor="let score of scores | keyvalue" [value]="score.value">{{score.value | titlecase}}</nb-option>
+  </nb-select>
+</div>
+<div class="flex-col">
+  <span class="required">Bot Percentile:</span>
+  <input type="number" nbInput fullWidth [(ngModel)]="assessment.bot_percentile">
+</div>
+<div class="flex-col">
+  <span class="required">Beery Score:</span>
+  <nb-select fullWidth [(ngModel)]="assessment.beery_score">
+    <nb-option *ngFor="let score of scores | keyvalue" [value]="score.value">{{score.value | titlecase}}</nb-option>
+  </nb-select>
+</div>
+<div class="flex-col">
+  <span class="required">Beery Percentile:</span>
+  <input type="number" nbInput fullWidth [(ngModel)]="assessment.beery_percentile">
+</div>
+<div class="flex-col">
+  <span class="required">Mc Masters/LFA score:</span>
+  <input type="number" nbInput fullWidth [(ngModel)]="assessment.mc_masters_score">
+</div>
+<div class="flex-col">
+  <span class="required">Self-regulation score:</span>
+  <input nbInput fullWidth [(ngModel)]="assessment.self_reg_score">
+</div>
+<div class="flex-col">
+  <span class="required">Year Grade:</span>
+  <input nbInput fullWidth [(ngModel)]="assessment.year_grade">
+</div>
+<div class="flex-col">
+  <span>Report Due:</span>
+  <input nbInput
+         fullWidth
+         [(ngModel)]="assessment.report_due"
+         [nbDatepicker]="date_picker">
+  <nb-datepicker #date_picker></nb-datepicker>
+</div>
+<div class="flex-col">
+  <span class="required">Summary:</span>
+  <textarea nbInput fullWidth [(ngModel)]="assessment.summary"></textarea>
+</div>
+<div class="flex-col">
+  <span class="required">Completed by:</span>
+  <input nbInput fullWidth [(ngModel)]="assessment.completed_by">
+</div>
