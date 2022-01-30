@@ -2,11 +2,12 @@ import {Component} from '@angular/core';
 import {AuthService} from "../auth.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'ngx-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+
 })
 export class LoginComponent {
   error: boolean
@@ -44,6 +45,6 @@ export class LoginComponent {
   }
 
   onRegister() {
-    this.router.navigate(['auth/register', {returnUrl:this.returnUrl}]).catch()
+    this.router.navigate(['auth/register', {returnUrl: this.returnUrl}]).catch()
   }
 }

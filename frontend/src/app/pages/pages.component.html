@@ -1,10 +1,6 @@
 <nb-layout>
   <nb-layout-header fixed>
-    <h4 class="header-left-container">
-      <a style="text-decoration: none;" routerLink="/pages/dashboard" routerLinkActive="active">
-        Clinic Engine
-      </a>
-    </h4>
+    <img src="assets/clinic_logo.jpg" class="header-image" (click)="navigateHome()" alt="logo">
     <div class="header-right-container">
       <nb-actions size="small">
         <nb-action [matMenuTriggerFor]="menu" nbTooltip="Create" icon="plus-outline"></nb-action>

@@ -57,8 +57,11 @@ class StudentNote(models.Model):
 class Assessment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='assessments')
     bot_score = models.CharField(max_length=255, null=True, blank=True)
-    notes = models.TextField(null=True, blank=True)
+    beery_score = models.CharField(max_length=255, null=True, blank=True)
+    summary = models.TextField(null=True, blank=True)
     year_grade = models.CharField(max_length=255, null=True, blank=True)
+    report_due = models.DateField(null=True, blank=True)
+    complete = models.BooleanField(default=False)
 
 
 

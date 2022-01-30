@@ -4,9 +4,9 @@
    <p class="alert-title"><b>Incorrect username or password.</b></p>
 </nb-alert>
 
-<form (ngSubmit)="login()" [formGroup]="loginForm" aria-labelledby="title">
-  <h3 class="title">Clinic Engine</h3>
-  <div class="form-control-group">
+<form (ngSubmit)="login()" [formGroup]="loginForm" class="center-flex-col" aria-labelledby="title">
+  <img src="assets/clinic_logo_text.jpg" class="login-logo" alt="logo">
+  <div class="form-control-group full-width">
     <label class="label" for="input-email">Username:</label>
     <input nbInput
            fullWidth
@@ -20,7 +20,7 @@
            required="required">
   </div>
 
-  <div class="form-control-group">
+  <div class="form-control-group full-width">
     <label class="label" for="input-password">Password:</label>
     <input nbInput
            fullWidth

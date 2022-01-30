@@ -28,4 +28,8 @@ export class PagesComponent implements OnInit {
   navTo(page: string) {
     this.router.navigate([`pages/${page}`]).catch()
   }
+
+  navigateHome(): void {
+    this.router.navigate(['pages/dashboard']).catch();
+  }
 }
