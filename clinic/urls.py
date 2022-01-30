@@ -11,6 +11,7 @@ router.register(r'paginated-student', PaginatedStudentViewSet, basename='paginat
 router.register(r'student', StudentViewSet, basename='student')
 router.register(r'student-note', StudentNoteViewSet, basename='student-note')
 router.register(r'assessment', AssessmentViewSet, basename='assessment')
+router.register(r'paginated-assessment', PaginatedAssessmentViewSet, basename='paginated-assessment')
 
 
 urlpatterns = [

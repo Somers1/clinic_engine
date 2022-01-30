@@ -41,6 +41,10 @@ export class ClinicService {
     return this.serverSourceConf(`api/clinic/student-note/?student=${studentId}`)
   }
 
+  getStudentAssessmentServerSource(studentId: string) {
+    return this.serverSourceConf(`api/clinic/paginated-assessment/?student=${studentId}`)
+  }
+
   postSchool(school: School) {
     return this.http.post<School>(`${environment.apiUrl}api/clinic/school/`, school)
   }

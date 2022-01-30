@@ -1,0 +1,15 @@
+:host ::ng-deep .full-cell {
+  padding: 1em !important;
+  margin: -0.5em -1em;
+  //height: 100%;
+}
+:host ::ng-deep .average {
+  background: #10e710;
+}
+:host ::ng-deep .below-average {
+  background: #fd8e3a;
+}
+:host ::ng-deep .well-below-average {
+  background: #ff4e4e;
+}
+

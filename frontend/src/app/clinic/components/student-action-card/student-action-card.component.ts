@@ -17,7 +17,8 @@ import {Assessment} from "../../models/assessment.model";
 export class StudentActionCardComponent {
   @Input() student!: Student;
   @Output() studentChange = new EventEmitter<Student>();
-  assessment:Assessment = new Assessment()
+  assessment: Assessment = new Assessment()
+
   constructor(private dialogService: NbDialogService,
               private clinicService: ClinicService) {
   }
@@ -30,11 +31,9 @@ export class StudentActionCardComponent {
         .subscribe({
           next: res => {
             this.studentChange.emit(res)
-            this.dialogService.open(OkDialogComponent,
-              {context: {title: 'Success', body: 'Saved Successfully!'}})
+            this.onSuccess()
           },
-          error: () => this.dialogService.open(OkDialogComponent,
-            {context: {title: 'Failed', body: 'Note save failed.'}}),
+          error: this.onError
         })
     })
   }
@@ -43,14 +42,11 @@ export class StudentActionCardComponent {
     this.dialogService.open(AddAssessmentDialogComponent, {context: {assessment: this.assessment}})
       .onClose.subscribe(assessment => {
       if (!assessment) return
+      assessment.student = this.student.id
       this.clinicService.postAssessment(assessment)
         .subscribe({
-          next: res => {
-            this.dialogService.open(OkDialogComponent,
-              {context: {title: 'Success', body: 'Saved Successfully!'}})
-          },
-          error: () => this.dialogService.open(OkDialogComponent,
-            {context: {title: 'Failed', body: 'Note save failed.'}}),
+          next: () => this.onSuccess(),
+          error: () =>  this.onError()
         })
     })
   }
@@ -63,11 +59,17 @@ export class StudentActionCardComponent {
       note.student = this.student.id
       this.clinicService.postNote(note)
         .subscribe({
-          next: () => this.dialogService.open(OkDialogComponent,
-            {context: {title: 'Success', body: 'Saved Successfully!'}}),
-          error: () => this.dialogService.open(OkDialogComponent,
-            {context: {title: 'Failed', body: 'Note save failed.'}}),
+          next: () => this.onSuccess(),
+          error: () => this.onError(),
         })
     })
+  }
+
+  onError() {
+    this.dialogService.open(OkDialogComponent, {context: {title: 'Failed', body: 'Note save failed.'}})
+  }
+
+  onSuccess() {
+    this.dialogService.open(OkDialogComponent, {context: {title: 'Success', body: 'Saved Successfully!'}})
   }
 }

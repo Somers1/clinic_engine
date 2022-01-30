@@ -26,6 +26,8 @@ import { NoteFormDialogComponent } from './forms/note-form-dialog/note-form.comp
 import { EditStudentInfoDialogComponent } from './components/edit-student-info-dialog/edit-student-info-dialog.component';
 import { AssessmentFormComponent } from './forms/assessment-form/assessment-form.component';
 import { AddAssessmentDialogComponent } from './components/add-assessment-dialog/add-assessment-dialog.component';
+import { StudentAssessmentsComponent } from './components/student-assessments/student-assessments.component';
+import { StudentAssessmentTileComponent } from './components/student-assessment-tile/student-assessment-tile.component';
 
 
 
@@ -46,6 +48,8 @@ import { AddAssessmentDialogComponent } from './components/add-assessment-dialog
     EditStudentInfoDialogComponent,
     AssessmentFormComponent,
     AddAssessmentDialogComponent,
+    StudentAssessmentsComponent,
+    StudentAssessmentTileComponent,
   ],
   imports: [
     CommonModule,

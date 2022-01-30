@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from clinic.models import Clinic, School, Student, Assessment, StudentNote
-from clinic.serializers import ClinicSerializer, StudentSerializer, SchoolSerializer, AssessmentSerializer
+from clinic.serializers import ClinicSerializer, StudentSerializer, SchoolSerializer, AssessmentSerializer, \
+    AssessmentPaginatedSerializer
 from clinic.serializers import StudentNoteSerializer
 from clinic_engine.pagination import AngularPaginator
 
@@ -23,6 +24,21 @@ class StudentViewSet(ModelViewSet):
 class AssessmentViewSet(ModelViewSet):
     queryset = Assessment.objects.all()
     serializer_class = AssessmentSerializer
+
+
+class PaginatedAssessmentViewSet(ModelViewSet):
+    queryset = Assessment.objects.all().order_by('-id')
+    serializer_class = AssessmentPaginatedSerializer
+    pagination_class = AngularPaginator
+    search_fields = [
+        'student', 'bot_score', 'bot_percentile', 'beery_score', 'beery_percentile', 'mc_masters_score',
+        'self_reg_score', 'summary', 'year_grade', 'report_due', 'completed_by'
+    ]
+    ordering_fields = [
+        'student', 'bot_score', 'bot_percentile', 'beery_score', 'beery_percentile', 'mc_masters_score',
+        'self_reg_score', 'summary', 'year_grade', 'report_due', 'completed_by'
+    ]
+    filter_fields = ['student']
 
 
 class PaginatedSchoolViewSet(ModelViewSet):

@@ -7,7 +7,7 @@
           <app-student-info-card [student]="student"></app-student-info-card>
         </nb-tab>
         <nb-tab tabTitle="Assessments">
-          <span>This is assessment information</span>
+          <app-student-assessments [student]="student"></app-student-assessments>
         </nb-tab>
         <nb-tab tabTitle="Notes">
           <app-student-note-table [studentId]="student.id"></app-student-note-table>
