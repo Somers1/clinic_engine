@@ -33,8 +33,8 @@ export class ClinicService {
     return this.serverSourceConf('api/clinic/paginated-school/')
   }
 
-  getStudentServerSource() {
-    return this.serverSourceConf('api/clinic/paginated-student/')
+  getStudentServerSource(schoolId: string) {
+    return this.serverSourceConf(`api/clinic/paginated-student/?school=${schoolId}`)
   }
 
   getStudentNoteServerSource(studentId: string) {

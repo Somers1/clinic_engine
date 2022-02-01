@@ -55,6 +55,7 @@ class PaginatedStudentViewSet(ModelViewSet):
     pagination_class = AngularPaginator
     search_fields = ['name']
     ordering_fields = ['name']
+    filter_fields = ['school']
 
 
 class StudentNoteViewSet(ModelViewSet):

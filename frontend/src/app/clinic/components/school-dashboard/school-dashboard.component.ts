@@ -37,13 +37,13 @@ export class SchoolDashboardComponent implements OnInit {
 
   constructor(private clinicService: ClinicService,
               private route: ActivatedRoute,
-              private router:Router) {
+              private router: Router) {
   }
 
   ngOnInit(): void {
-    this.source = this.clinicService.getStudentServerSource();
     this.route.params.subscribe({
       next: params => {
+        this.source = this.clinicService.getStudentServerSource(params['schoolId']);
         this.clinicService.getSchool(params['schoolId']).subscribe(res => this.school = res)
       }
     })
